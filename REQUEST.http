@@ -1,0 +1,9 @@
+GET http://localhost:3838/app/v1/ping
+################################
+GET http://localhost:3838/app/v1/healthz
+###
+GET http://localhost:3838/app/v1/target-url
+###
+GET http://localhost:3838/app/v1/health-status
+###
+GET http://localhost:3838/app/v1/status
