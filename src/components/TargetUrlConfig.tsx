@@ -52,13 +52,13 @@ const amber = '';
 //               <Switch onClick={() => setActive(!active)} checked={active} />
 //               <a>Enable </a>
 //           </Space>
-          
+
 //       ),
 //     },
 //   ];
-  
+
   // console.log(typeof(data))
-    
+
   function onChange(checked:any) {
     console.log(`switch to ${checked}`);
   }
@@ -67,7 +67,7 @@ const amber = '';
     console.log('params', pagination, filters, sorter, extra);
   }
 
-  
+
 const TargetUrlConfig = () => {
     const [active, setActive] = useState(true);
 
@@ -90,15 +90,15 @@ const TargetUrlConfig = () => {
             console.error(err);
         }
     }
-   
+
     useEffect(() => {
         const INTERVAL = 15000;
         const timer = setInterval(targetUrl, INTERVAL);
         console.log("Request INTERVAL: ",INTERVAL + " ms");
         return () => clearInterval(timer);
       }, []);
-    
-    
+
+
       const columns:any = [
         {
           title: '#',
@@ -130,19 +130,19 @@ const TargetUrlConfig = () => {
               title: 'State',
               key: 'state',
               render: (text: any, record: any) => (
-                  
+
             <Space size="small">
                   <a>Disable</a>
                   {/* <Switch defaultChecked onChange={onChange} /> */}
                   <Switch onClick={() => setActive(!active)} checked={active} />
                   <a>Enable </a>
               </Space>
-              
+
           ),
         },
       ];
-      
-  
+
+
     return (
         <>
              <Spin size="small" />
@@ -159,16 +159,16 @@ const TargetUrlConfig = () => {
           dataSource={(dataSource:any)}
           columns={columns as ColumnTypes}
             /> */}
-            
+
     <Table columns={columns} onChange={onFilter} expandable={{
       expandedRowRender: (getResult:any) => <p style={{ margin: 0 }}>{getResult.response}</p>,
     //   rowExpandable: (getResult:any) => getResult.status[0] !== 'success',
             }}
       dataSource={getResult} rowClassName={(getResult:any, index:any) => (getResult.httpStatusCode > 200 ? "red" : "green")} size="small" />
-    
-        
+
+
         </>
       );
   }
-  
+
   export default TargetUrlConfig;

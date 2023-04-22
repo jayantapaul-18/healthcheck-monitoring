@@ -53,13 +53,13 @@ app.get('/', (req, res) => {
 app.get('/target-url-config', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'))
   })
-  
+
 
 function startTimer() {
     const started = process.uptime()
     return () => Math.floor((process.uptime() - started) * 1000) // uptime gives us seconds
   }
-  
+
 app.all("/app/v1/healthz", (req, res) => {
     // winston.info(`${req.method} - ${req.originalUrl} - ${req.ip}`);
     const rss = (process.memoryUsage().rss / (1024 * 1024)).toFixed(2);
@@ -88,6 +88,6 @@ function startServer() {
       // winston.info(`Server listening on port http://localhost:${port}`);
     });
   }
-  
+
 startServer();
 // @End //

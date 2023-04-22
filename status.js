@@ -12,9 +12,9 @@ status.get("/target-url", (req, res) => {
     var newArray = TARGET_URL.map((object, i) => ({ ...object, key: i + 1 }));
     res.status(200).json(newArray);
 });
-  
+
 status.get("/status", (req, res) => {
-    
+
     var status = {
         timestamp: Date.now(),
         osHostname: os.hostname(),
@@ -28,7 +28,7 @@ status.get("/status", (req, res) => {
         osNetworkInterfaces: os.networkInterfaces(),
         osUptime: os.uptime(),
         v8GetHeapSpaceStatistics:v8.getHeapSpaceStatistics()
-        
+
     }
 
     res.status(200).json({status:status, eventLoopStats:eventLoopStats.sense()});
@@ -43,13 +43,13 @@ function allSettled (promises) {
         .then(
         value => ({ state: 'fulfilled', value: value }),
         error => ({ state: 'rejected', reason: error })
-        
+
       )
     );
     return Promise.all(allPromises);
   }
 
- 
+
 status.get("/health-status", (req, res) => {
     const Promises = [];
     const TARGET_TEST_RESULTS = [];
@@ -63,7 +63,7 @@ status.get("/health-status", (req, res) => {
         },
         ));
       });
-     
+
     var startDate = moment();
     allSettled(Promises).then(results => {
         results.forEach((result, index) => {
@@ -100,12 +100,12 @@ status.get("/health-status", (req, res) => {
                 });
             }
         });
-  
+
         //   return TARGET_TEST_RESULTS;
         console.log(TARGET_TEST_RESULTS);
         res.status(200).json(TARGET_TEST_RESULTS);
     });
-        
+
 });
-  
+
 module.exports = status;

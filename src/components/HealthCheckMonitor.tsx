@@ -106,13 +106,13 @@ const columns:any = [
               <Switch defaultChecked onChange={onChange} />
               <a>Enable </a>
           </Space>
-          
+
       ),
     },
   ];
-  
+
   // console.log(typeof(data))
-    
+
   function onChange(checked:any) {
     console.log(`switch to ${checked}`);
   }
@@ -121,7 +121,7 @@ const columns:any = [
     console.log('params', pagination, filters, sorter, extra);
   }
 
-  
+
 const HealthCheckMonitor = () => {
 
     const [isLoading, setisLoading] = useState(true);
@@ -143,17 +143,17 @@ const HealthCheckMonitor = () => {
             console.error(err);
         }
     }
-   
+
     useEffect(() => {
         const INTERVAL = config.REQUEST_INTERVAL;
         const timer = setInterval(getHealthStatus, INTERVAL);
         console.log("Request INTERVAL: ",INTERVAL + " ms");
         return () => clearInterval(timer);
       }, []);
-    
+
     return (
       <>
-        
+
              <Spin size="small" />
     {/* <button className="btn btn-sm btn-primary" onClick={getHealthStatus}>HealthStatus</button> */}
 
@@ -167,7 +167,7 @@ const HealthCheckMonitor = () => {
 							<p key={health.key}>{health.status}</p>
 				})
       )} */}
-    
+
     <Table columns={columns} onChange={onFilter} expandable={{
           expandedRowRender: (getResult:any) => <p style={{ margin: 0 , color: 'red'}}>{getResult.response}</p>,
           rowExpandable: (getResult: any) => getResult.status[0] !== 'success',
@@ -179,10 +179,10 @@ const HealthCheckMonitor = () => {
         // )
             }}
       dataSource={getResult} rowClassName={(getResult:any, index:any) => ("red")} size="small" />
-    
-        
+
+
         </>
       );
   }
-  
+
   export default HealthCheckMonitor;
