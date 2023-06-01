@@ -4,7 +4,6 @@ import { Switch, Button } from 'antd';
 import { Tag, Divider } from 'antd';
 import { Table, Space } from 'antd';
 import { Spin } from 'antd';
-import 'antd/dist/antd.css';
 import axios from 'axios';
 import { Input,Popconfirm, Form, InputRef } from 'antd';
 import { FormInstance } from 'antd/lib/form';
