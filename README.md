@@ -49,7 +49,7 @@ pre-commit run --all-files
 
 ---
 
-# Update package.json with the latest version of all dependencies
+## Update package.json with the latest version of all dependencies
 
 ```bash
 npm install -g npm-check-updates

@@ -1,0 +1,8 @@
+# Ignore helm-k8:
+CHANGELOG.md
+build
+helm-k8
+node_modules
+.DS_Store
+src/.DS_Store
+src/logo.svg
