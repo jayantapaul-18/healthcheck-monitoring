@@ -1,4 +1,4 @@
 module.exports = {
-    TIMEOUT: 5000,
-    REQUEST_INTERVAL: 4000
-}
+  TIMEOUT: 5000,
+  REQUEST_INTERVAL: 4000,
+};
