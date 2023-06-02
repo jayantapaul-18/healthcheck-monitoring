@@ -68,12 +68,12 @@ const columns: any = [
     //     </>
     //   ),
   },
-  {
-    title: "Response",
-    dataIndex: "response",
-    key: "response",
-    render: (response: any) => <></>,
-  },
+  // {
+  //   title: "Response",
+  //   dataIndex: "response",
+  //   key: "response",
+  //   render: (response: any) => <></>,
+  // },
   {
     title: "Last Time Checked",
     dataIndex: "timestamp",

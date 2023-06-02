@@ -5,8 +5,8 @@
   "scripts": {
     "prepare": "husky install",
     "clean": "tsc --build --clean",
-    "start": "react-scripts start",
-    "start:dev": "npx nodemon",
+    "start": "PORT=3001 react-scripts start",
+    "start:dev": "PORT=3001 npx nodemon",
     "serve": "serve -s build",
     "build": "rm -rf build && react-scripts build",
     "format": "prettier --write \"src/**\"",
