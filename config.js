@@ -52,7 +52,7 @@ module.exports = {
         {
             tag: 'plab',
             protocol: 'http',
-            hostPort: '192.168.1.176:1881',
+            hostPort: '192.168.1.173:1881',
             path: '/agent/v1/healthcheck',
             state: false
         },
@@ -66,7 +66,7 @@ module.exports = {
         {
             tag: 'plab',
             protocol: 'http',
-            hostPort: '192.168.1.176:1881',
+            hostPort: '192.168.1.173:1881',
             path: '/agent/v1/getTemp',
             state: false
         },
@@ -80,21 +80,21 @@ module.exports = {
         {
             tag: 'plab',
             protocol: 'http',
-            hostPort: '192.168.1.176:1881',
+            hostPort: '192.168.1.173:1881',
             path: '/agent/v1/getEnv',
             state: false
         },
         {
             tag: 'plab',
             protocol: 'http',
-            hostPort: '192.168.1.176:1881',
+            hostPort: '192.168.1.173:1881',
             path: '/agent/v1/hostnamectl',
             state: false
         },
         {
             tag: 'plab',
             protocol: 'http',
-            hostPort: '192.168.1.176:1881',
+            hostPort: '192.168.1.173:1881',
             path: '/agent/v1/getTemp',
             state: false
         }

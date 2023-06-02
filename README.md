@@ -24,9 +24,20 @@ npm run build
 
 Runs the app [ node server.js / nodemon server.js / pm2 start server.js ]\
 Open [http://localhost:3838](http://localhost:3838) to view it in the browser.
+or, Direct React UI using [http://localhost:3001](http://localhost:3001)
 ```
 
 ---
+
+## Setting up .env
+
+```bash
+chmod 777 start.sh
+./start.sh
+or,
+touch .env
+STATUS_SERVER_URL=http://localhost:3838
+```
 
 ## Running pre-commit checks
 
